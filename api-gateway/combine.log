@@ -1,0 +1,79 @@
+{"level":"info","message":"API Gateway server is running on port:","service":"api-gateway","timestamp":"2026-02-14T18:26:58.397Z"}
+{"0":"h","1":"t","10":"a","11":"l","12":"h","13":"o","14":"s","15":"t","16":":","17":"3","18":"0","19":"0","2":"t","20":"1","3":"p","4":":","5":"/","6":"/","7":"l","8":"o","9":"c","level":"info","message":"Auth service is running on port :","service":"api-gateway","timestamp":"2026-02-14T18:26:58.401Z"}
+{"0":"r","1":"e","10":"c","11":"a","12":"l","13":"h","14":"o","15":"s","16":"t","17":":","18":"6","19":"3","2":"d","20":"7","21":"9","3":"i","4":"s","5":":","6":"/","7":"/","8":"l","9":"o","level":"info","message":"Redis url","service":"api-gateway","timestamp":"2026-02-14T18:26:58.402Z"}
+{"level":"info","message":"received POST request /v1/auth/register","service":"api-gateway","timestamp":"2026-02-14T18:37:05.734Z"}
+{"level":"info","message":"request body {\"username\":\"trueebg\",\"email\":\"zem@examplre.com\",\"password\":\"hell5d26345\"}","service":"api-gateway","timestamp":"2026-02-14T18:37:05.736Z"}
+{"level":"info","message":"Response received from auth service: 400","service":"api-gateway","timestamp":"2026-02-14T18:37:25.655Z"}
+{"level":"info","message":"received POST request /v1/auth/register","service":"api-gateway","timestamp":"2026-02-14T18:37:36.426Z"}
+{"level":"info","message":"request body {\"username\":\"trueebg\",\"email\":\"zoem@examplre.com\",\"password\":\"hell5d26345\"}","service":"api-gateway","timestamp":"2026-02-14T18:37:36.427Z"}
+{"level":"info","message":"Response received from auth service: 400","service":"api-gateway","timestamp":"2026-02-14T18:37:36.639Z"}
+{"level":"info","message":"received POST request /v1/auth/register","service":"api-gateway","timestamp":"2026-02-14T18:37:45.823Z"}
+{"level":"info","message":"request body {\"username\":\"trueebg\",\"email\":\"zoeym@examplre.com\",\"password\":\"hell5d26345\"}","service":"api-gateway","timestamp":"2026-02-14T18:37:45.825Z"}
+{"level":"info","message":"Response received from auth service: 400","service":"api-gateway","timestamp":"2026-02-14T18:37:45.965Z"}
+{"level":"info","message":"received POST request /v1/auth/register","service":"api-gateway","timestamp":"2026-02-14T18:37:52.667Z"}
+{"level":"info","message":"request body {\"username\":\"tryueebg\",\"email\":\"zoeym@examplre.com\",\"password\":\"hell5d26345\"}","service":"api-gateway","timestamp":"2026-02-14T18:37:52.668Z"}
+{"level":"info","message":"Response received from auth service: 201","service":"api-gateway","timestamp":"2026-02-14T18:37:53.328Z"}
+{"level":"info","message":"API Gateway server is running on port:","service":"api-gateway","timestamp":"2026-02-14T18:46:56.346Z"}
+{"0":"h","1":"t","10":"a","11":"l","12":"h","13":"o","14":"s","15":"t","16":":","17":"3","18":"0","19":"0","2":"t","20":"1","3":"p","4":":","5":"/","6":"/","7":"l","8":"o","9":"c","level":"info","message":"Auth service is running on port :","service":"api-gateway","timestamp":"2026-02-14T18:46:56.351Z"}
+{"0":"r","1":"e","10":"c","11":"a","12":"l","13":"h","14":"o","15":"s","16":"t","17":":","18":"6","19":"3","2":"d","20":"7","21":"9","3":"i","4":"s","5":":","6":"/","7":"/","8":"l","9":"o","level":"info","message":"Redis url","service":"api-gateway","timestamp":"2026-02-14T18:46:56.353Z"}
+{"level":"info","message":"API Gateway server is running on port:","service":"api-gateway","timestamp":"2026-02-16T05:05:18.132Z"}
+{"0":"h","1":"t","10":"a","11":"l","12":"h","13":"o","14":"s","15":"t","16":":","17":"3","18":"0","19":"0","2":"t","20":"1","3":"p","4":":","5":"/","6":"/","7":"l","8":"o","9":"c","level":"info","message":"Auth service is running on port :","service":"api-gateway","timestamp":"2026-02-16T05:05:18.135Z"}
+{"0":"r","1":"e","10":"c","11":"a","12":"l","13":"h","14":"o","15":"s","16":"t","17":":","18":"6","19":"3","2":"d","20":"7","21":"9","3":"i","4":"s","5":":","6":"/","7":"/","8":"l","9":"o","level":"info","message":"Redis url","service":"api-gateway","timestamp":"2026-02-16T05:05:18.137Z"}
+{"level":"info","message":"API Gateway server is running on port:","service":"api-gateway","timestamp":"2026-02-16T05:06:21.402Z"}
+{"0":"h","1":"t","10":"a","11":"l","12":"h","13":"o","14":"s","15":"t","16":":","17":"3","18":"0","19":"0","2":"t","20":"1","3":"p","4":":","5":"/","6":"/","7":"l","8":"o","9":"c","level":"info","message":"Auth service is running on port :","service":"api-gateway","timestamp":"2026-02-16T05:06:21.405Z"}
+{"0":"r","1":"e","10":"c","11":"a","12":"l","13":"h","14":"o","15":"s","16":"t","17":":","18":"6","19":"3","2":"d","20":"7","21":"9","3":"i","4":"s","5":":","6":"/","7":"/","8":"l","9":"o","level":"info","message":"Redis url","service":"api-gateway","timestamp":"2026-02-16T05:06:21.406Z"}
+{"level":"info","message":"API Gateway server is running on port:","service":"api-gateway","timestamp":"2026-02-16T05:15:52.996Z"}
+{"0":"h","1":"t","10":"a","11":"l","12":"h","13":"o","14":"s","15":"t","16":":","17":"3","18":"0","19":"0","2":"t","20":"1","3":"p","4":":","5":"/","6":"/","7":"l","8":"o","9":"c","level":"info","message":"Auth service is running on port :","service":"api-gateway","timestamp":"2026-02-16T05:15:53.062Z"}
+{"0":"r","1":"e","10":"c","11":"a","12":"l","13":"h","14":"o","15":"s","16":"t","17":":","18":"6","19":"3","2":"d","20":"7","21":"9","3":"i","4":"s","5":":","6":"/","7":"/","8":"l","9":"o","level":"info","message":"Redis url","service":"api-gateway","timestamp":"2026-02-16T05:15:53.066Z"}
+{"level":"info","message":"API Gateway server is running on port:","service":"api-gateway","timestamp":"2026-02-16T05:19:57.867Z"}
+{"0":"h","1":"t","10":"a","11":"l","12":"h","13":"o","14":"s","15":"t","16":":","17":"3","18":"0","19":"0","2":"t","20":"1","3":"p","4":":","5":"/","6":"/","7":"l","8":"o","9":"c","level":"info","message":"Auth service is running on port :","service":"api-gateway","timestamp":"2026-02-16T05:19:57.871Z"}
+{"0":"r","1":"e","10":"c","11":"a","12":"l","13":"h","14":"o","15":"s","16":"t","17":":","18":"6","19":"3","2":"d","20":"7","21":"9","3":"i","4":"s","5":":","6":"/","7":"/","8":"l","9":"o","level":"info","message":"Redis url","service":"api-gateway","timestamp":"2026-02-16T05:19:57.872Z"}
+{"level":"error","message":"SyntaxError: Expected ',' or '}' after property value in JSON at position 26 (line 3 column 3)\n    at JSON.parse (<anonymous>)\n    at parse (C:\\Users\\Asus\\OneDrive\\Desktop\\Final-Project-1\\api-gateway\\node_modules\\body-parser\\lib\\types\\json.js:72:19)\n    at C:\\Users\\Asus\\OneDrive\\Desktop\\Final-Project-1\\api-gateway\\node_modules\\body-parser\\lib\\read.js:162:18\n    at AsyncResource.runInAsyncScope (node:async_hooks:214:14)\n    at invokeCallback (C:\\Users\\Asus\\OneDrive\\Desktop\\Final-Project-1\\api-gateway\\node_modules\\raw-body\\index.js:238:16)\n    at done (C:\\Users\\Asus\\OneDrive\\Desktop\\Final-Project-1\\api-gateway\\node_modules\\raw-body\\index.js:227:7)\n    at IncomingMessage.onEnd (C:\\Users\\Asus\\OneDrive\\Desktop\\Final-Project-1\\api-gateway\\node_modules\\raw-body\\index.js:287:7)\n    at IncomingMessage.emit (node:events:518:28)\n    at endReadableNT (node:internal/streams/readable:1698:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)","service":"api-gateway","timestamp":"2026-02-16T05:22:24.452Z"}
+{"level":"info","message":"received POST request /v1/auth/register","service":"api-gateway","timestamp":"2026-02-16T05:22:31.739Z"}
+{"level":"info","message":"request body {\"username\":\"nimtin\",\"email\":\"nimtin@examplre.com\",\"password\":\"hell5d26345\"}","service":"api-gateway","timestamp":"2026-02-16T05:22:31.740Z"}
+{"level":"info","message":"Response received from auth service: 500","service":"api-gateway","timestamp":"2026-02-16T05:22:32.058Z"}
+{"level":"info","message":"received POST request /v1/auth/register","service":"api-gateway","timestamp":"2026-02-16T05:25:14.628Z"}
+{"level":"info","message":"request body {\"username\":\"nimtin\",\"email\":\"nimtin@examplre.com\",\"password\":\"hell5d26345\"}","service":"api-gateway","timestamp":"2026-02-16T05:25:14.629Z"}
+{"level":"info","message":"Response received from auth service: 500","service":"api-gateway","timestamp":"2026-02-16T05:25:14.719Z"}
+{"level":"info","message":"received POST request /v1/auth/register","service":"api-gateway","timestamp":"2026-02-16T05:29:24.735Z"}
+{"level":"info","message":"request body {\"username\":\"kamalsingh\",\"email\":\"kamal@example.com\",\"password\":\"hell5d26345\"}","service":"api-gateway","timestamp":"2026-02-16T05:29:24.736Z"}
+{"level":"info","message":"Response received from auth service: 500","service":"api-gateway","timestamp":"2026-02-16T05:29:24.817Z"}
+{"level":"info","message":"received POST request /v1/auth/register","service":"api-gateway","timestamp":"2026-02-16T05:40:32.450Z"}
+{"level":"info","message":"request body {\"username\":\"kamalsingh\",\"email\":\"kamal@example.com\",\"password\":\"hell5d26345\"}","service":"api-gateway","timestamp":"2026-02-16T05:40:32.453Z"}
+{"level":"info","message":"Response received from auth service: 201","service":"api-gateway","timestamp":"2026-02-16T05:40:32.899Z"}
+{"level":"info","message":"received POST request /v1/auth/login","service":"api-gateway","timestamp":"2026-02-16T05:40:49.085Z"}
+{"level":"info","message":"request body {\"email\":\"kamal@example.com\",\"password\":\"hell5d26345\"}","service":"api-gateway","timestamp":"2026-02-16T05:40:49.086Z"}
+{"level":"info","message":"Response received from auth service: 500","service":"api-gateway","timestamp":"2026-02-16T05:40:49.135Z"}
+{"level":"info","message":"received POST request /v1/auth/login","service":"api-gateway","timestamp":"2026-02-16T05:43:38.162Z"}
+{"level":"info","message":"request body {\"email\":\"kamal@example.com\",\"password\":\"hell5d26345\"}","service":"api-gateway","timestamp":"2026-02-16T05:43:38.164Z"}
+{"level":"info","message":"Response received from auth service: 500","service":"api-gateway","timestamp":"2026-02-16T05:43:38.257Z"}
+{"level":"info","message":"API Gateway server is running on port:","service":"api-gateway","timestamp":"2026-02-16T05:44:08.832Z"}
+{"0":"h","1":"t","10":"a","11":"l","12":"h","13":"o","14":"s","15":"t","16":":","17":"3","18":"0","19":"0","2":"t","20":"1","3":"p","4":":","5":"/","6":"/","7":"l","8":"o","9":"c","level":"info","message":"Auth service is running on port :","service":"api-gateway","timestamp":"2026-02-16T05:44:08.837Z"}
+{"0":"r","1":"e","10":"c","11":"a","12":"l","13":"h","14":"o","15":"s","16":"t","17":":","18":"6","19":"3","2":"d","20":"7","21":"9","3":"i","4":"s","5":":","6":"/","7":"/","8":"l","9":"o","level":"info","message":"Redis url","service":"api-gateway","timestamp":"2026-02-16T05:44:08.839Z"}
+{"level":"info","message":"API Gateway server is running on port:","service":"api-gateway","timestamp":"2026-02-16T05:44:19.390Z"}
+{"0":"h","1":"t","10":"a","11":"l","12":"h","13":"o","14":"s","15":"t","16":":","17":"3","18":"0","19":"0","2":"t","20":"1","3":"p","4":":","5":"/","6":"/","7":"l","8":"o","9":"c","level":"info","message":"Auth service is running on port :","service":"api-gateway","timestamp":"2026-02-16T05:44:19.397Z"}
+{"0":"r","1":"e","10":"c","11":"a","12":"l","13":"h","14":"o","15":"s","16":"t","17":":","18":"6","19":"3","2":"d","20":"7","21":"9","3":"i","4":"s","5":":","6":"/","7":"/","8":"l","9":"o","level":"info","message":"Redis url","service":"api-gateway","timestamp":"2026-02-16T05:44:19.398Z"}
+{"level":"info","message":"received POST request /v1/auth/login","service":"api-gateway","timestamp":"2026-02-16T05:44:29.283Z"}
+{"level":"info","message":"request body {\"email\":\"kamal@example.com\",\"password\":\"hell5d26345\"}","service":"api-gateway","timestamp":"2026-02-16T05:44:29.287Z"}
+{"level":"info","message":"Response received from auth service: 500","service":"api-gateway","timestamp":"2026-02-16T05:44:29.384Z"}
+{"level":"info","message":"received POST request /v1/auth/login","service":"api-gateway","timestamp":"2026-02-16T05:46:48.322Z"}
+{"level":"info","message":"request body {\"email\":\"kamal@example.com\",\"password\":\"hell5d26345\"}","service":"api-gateway","timestamp":"2026-02-16T05:46:48.323Z"}
+{"level":"info","message":"Response received from auth service: 500","service":"api-gateway","timestamp":"2026-02-16T05:46:48.459Z"}
+{"level":"info","message":"received POST request /v1/auth/login","service":"api-gateway","timestamp":"2026-02-16T05:47:24.134Z"}
+{"level":"info","message":"request body {\"email\":\"kamal@example.com\",\"password\":\"hell5d26345\"}","service":"api-gateway","timestamp":"2026-02-16T05:47:24.138Z"}
+{"level":"info","message":"Response received from auth service: 500","service":"api-gateway","timestamp":"2026-02-16T05:47:24.325Z"}
+{"level":"info","message":"received POST request /v1/auth/login","service":"api-gateway","timestamp":"2026-02-16T05:48:17.754Z"}
+{"level":"info","message":"request body {\"email\":\"kamal@example.com\",\"password\":\"hell5d26345\"}","service":"api-gateway","timestamp":"2026-02-16T05:48:17.755Z"}
+{"level":"info","message":"Response received from auth service: 500","service":"api-gateway","timestamp":"2026-02-16T05:48:17.896Z"}
+{"level":"info","message":"received POST request /v1/auth/login","service":"api-gateway","timestamp":"2026-02-16T05:49:02.529Z"}
+{"level":"info","message":"request body {\"email\":\"kamal@example.com\",\"password\":\"hell5d26345\"}","service":"api-gateway","timestamp":"2026-02-16T05:49:02.530Z"}
+{"level":"info","message":"Response received from auth service: 500","service":"api-gateway","timestamp":"2026-02-16T05:49:02.670Z"}
+{"level":"info","message":"received POST request /v1/auth/login","service":"api-gateway","timestamp":"2026-02-16T05:51:06.718Z"}
+{"level":"info","message":"request body {\"email\":\"kamal@example.com\",\"password\":\"hell5d26345\"}","service":"api-gateway","timestamp":"2026-02-16T05:51:06.720Z"}
+{"level":"info","message":"Response received from auth service: 500","service":"api-gateway","timestamp":"2026-02-16T05:51:16.945Z"}
+{"level":"info","message":"received POST request /v1/auth/login","service":"api-gateway","timestamp":"2026-02-16T05:56:43.592Z"}
+{"level":"info","message":"request body {\"email\":\"kamal@example.com\",\"password\":\"hell5d26345\"}","service":"api-gateway","timestamp":"2026-02-16T05:56:43.593Z"}
+{"level":"info","message":"Response received from auth service: 500","service":"api-gateway","timestamp":"2026-02-16T05:56:44.232Z"}
+{"level":"info","message":"received POST request /v1/auth/login","service":"api-gateway","timestamp":"2026-02-16T05:59:18.248Z"}
+{"level":"info","message":"request body {\"email\":\"kamal@example.com\",\"password\":\"hell5d26345\"}","service":"api-gateway","timestamp":"2026-02-16T05:59:18.250Z"}
+{"level":"info","message":"Response received from auth service: 200","service":"api-gateway","timestamp":"2026-02-16T05:59:25.308Z"}

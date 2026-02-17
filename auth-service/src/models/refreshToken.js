@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+import mongoose, { mongo } from "mongoose";
 
 const RefreshToken = mongoose.Schema({
     token: {
@@ -13,4 +13,10 @@ const RefreshToken = mongoose.Schema({
         type: Date,
         required: true
     }
-},{timestamps: true})
+},{timestamps: true});
+
+RefreshToken.index({expiresAt: 1}, {expireAfterSeconds:0});
+
+const Token = mongoose.model('Token', RefreshToken);
+
+export default Token;

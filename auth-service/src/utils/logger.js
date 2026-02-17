@@ -10,14 +10,14 @@ const logger = winston.createLogger({
     ),
     defaultMeta: {service: "auth-service"},
     transports: [
-        new winston.transport.Console({
+        new winston.transports.Console({
             format: winston.format.combine(
                 winston.format.colorize(),
                 winston.format.simple(),
             ),
         }),
-        new winston.transport.File({filename:"error.log", level:"error"}),
-        new winston.transport.File({filename:"combine.log"})
+        new winston.transports.File({filename:"error.log", level:"error"}),
+        new winston.transports.File({filename:"combine.log"})
     ]
 });
 
