@@ -1,14 +1,14 @@
 import express from "express";
-import logger from "./src/utils/logger";
+import logger from './utils/logger.js'
 import dotenv from 'dotenv';
-import errorHandler from "./src/middleware/errorHandler.js";
-import router from "./src/routes/postRoutes.js";
+import errorHandler from "./middleware/errorHandler.js";
+import router from "./routes/postRoutes.js";
 import cors from 'cors';
 import helmet from 'helmet';
 import redis from 'ioredis';
 import mongoose from "mongoose";
 import rateLimit from 'express-rate-limit';
-import redisStore from 'rate-limit-redis';
+import {RedisStore} from 'rate-limit-redis';
 import { RateLimiterRedis } from "rate-limiter-flexible";
 
 dotenv.config();
@@ -27,9 +27,6 @@ mongoose.connect(process.env.MONGODB_URI).then(() => logger.info("connected to m
 app.use(express.json());
 app.use(cors());
 app.use(helmet())
-
-app.use("/api/post", router);
-app.use(errorHandler);
 
 const rateLimiter = new RateLimiterRedis({
     storeClient: redisClient,
@@ -60,19 +57,19 @@ const generalRateLimiter = rateLimit({
             message: "Too many requests"
         })
     },
-    store: new redisStore()({
+    store: new RedisStore({
         sendCommand : (...args) => redisClient.call(...args)
     })
 })
 
 app.use((req, res, next) => {
-    if(req.path === "/api/path/create-post"){
+    if(req.path === "/api/post/create-post"){
         return next();
     }
-    generalRateLimiter(req, res, next())
+    generalRateLimiter(req, res, next)
 });
 
-const sensetiveEndpointRateLimiter = rateLimit({
+const sensitiveEndpointRateLimiter = rateLimit({
     windowMs: 15 * 60 * 1000,
     max: 50,
     standardHeaders: true,
@@ -84,11 +81,25 @@ const sensetiveEndpointRateLimiter = rateLimit({
             message: "Too many requests"
         })
     },
-    store: new redisStore({
+    store: new RedisStore({
         sendCommand: (...args) => redisClient.call(...args)
     })
 })
 
+app.use("/api/post/create-post", sensitiveEndpointRateLimiter);
+
+app.use("/api/posts", (req, res, next) => {
+    req.redisClient = redisClient;
+    next();
+}, router);
+app.use(errorHandler);
+
+
+
 app.listen(process.env.PORT, () => {
     logger.info("Post service is running on port : ", port);
 })
+
+process.on("unhandledRejection", (reason, promise) => {
+    logger.error("unhandled rejection at,", promise, "   reason :", reason);
+});
