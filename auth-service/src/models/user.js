@@ -29,7 +29,7 @@ UserSchema.pre('save', async function (next) {
 
     try {
         this.password = await argon2.hash(this.password);
-        next();   // ✅ IMPORTANT
+        next();
     } catch (error) {
         next(error);
     }
