@@ -8,8 +8,9 @@ import helmet from 'helmet';
 import redis from 'ioredis';
 import mongoose from "mongoose";
 import rateLimit from 'express-rate-limit';
-import {RedisStore} from 'rate-limit-redis';
+import { RedisStore } from 'rate-limit-redis';
 import { RateLimiterRedis } from "rate-limiter-flexible";
+import connectRabbitmq from "./utils/rabbitMQ.js";
 
 dotenv.config();
 
@@ -23,7 +24,7 @@ redisClient.on("error", (error) => {
 const app = express();
 const port = process.env.PORT || 3002;
 
-mongoose.connect(process.env.MONGODB_URI).then(() => logger.info("connected to mongodb")).catch((e) => logger.warn("error connecting to mongodb",e))
+mongoose.connect(process.env.MONGODB_URI).then(() => logger.info("connected to mongodb")).catch((e) => logger.warn("error connecting to mongodb", e))
 app.use(express.json());
 app.use(cors());
 app.use(helmet())
@@ -52,18 +53,18 @@ const generalRateLimiter = rateLimit({
     legacyHeaders: false,
     handler: (req, res) => {
         logger.warn(`limit reached for IP ${req.ip}`),
-        res.status(429).json({
-            success:  false,
-            message: "Too many requests"
-        })
+            res.status(429).json({
+                success: false,
+                message: "Too many requests"
+            })
     },
     store: new RedisStore({
-        sendCommand : (...args) => redisClient.call(...args)
+        sendCommand: (...args) => redisClient.call(...args)
     })
 })
 
 app.use((req, res, next) => {
-    if(req.path === "/api/post/create-post"){
+    if (req.path === "/api/post/create-post") {
         return next();
     }
     generalRateLimiter(req, res, next)
@@ -94,11 +95,18 @@ app.use("/api/posts", (req, res, next) => {
 }, router);
 app.use(errorHandler);
 
+async function connectServer() {
+    try {
+        await connectRabbitmq();
+        app.listen(process.env.PORT, () => {
+            logger.info("Post service is running on port : ", port);
+        })
+    } catch (error) {
+        logger.error("failed to connect to server",error)
+    }
+}
 
-
-app.listen(process.env.PORT, () => {
-    logger.info("Post service is running on port : ", port);
-})
+connectServer();
 
 process.on("unhandledRejection", (reason, promise) => {
     logger.error("unhandled rejection at,", promise, "   reason :", reason);

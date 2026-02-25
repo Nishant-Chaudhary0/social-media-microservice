@@ -1,7 +1,7 @@
 import post from "../models/post.js";
 import logger from "../utils/logger.js";
-
-
+import { invalidateCache } from "../utils/invalidateCache.js";
+import publishEvent from "../utils/rabbitMQ.js"
 
 export const createPost = async (req, res, next) => {
     logger.info("Post endpoint hit");
@@ -31,7 +31,7 @@ export const createPost = async (req, res, next) => {
         });
 
         await newPost.save();
-        await invalidatePostCache(req, newPost._id.toString());
+        await invalidateCache(req, newPost._id.toString());
 
         logger.info("New post created successfully");
 
@@ -67,7 +67,7 @@ export const getAllPosts = async (req, res) => {
         const result = {
             allPosts,
             currentPage: page,
-            totalPages: Math.ceil(totalNumberOfPosts/limit),
+            totalPages: Math.ceil(totalNumberOfPosts / limit),
             totalPosts: totalNumberOfPosts
         }
 
@@ -85,11 +85,11 @@ export const getAllPosts = async (req, res) => {
 
 export const getPost = async (req, res) => {
     try {
-        const { id } = req.params;
+        const { id } = req.params.id;
         const cachekey = `post:${id}`;
         const cachedPost = await res.redisClient.get(cachekey);
 
-        if(cachekey){
+        if (cachekey) {
             return res.json(JSON.parse(cachedPost));
         }
 
@@ -97,13 +97,15 @@ export const getPost = async (req, res) => {
 
         if (!userPost) {
             logger.warn("No posts found for user");
-            return res.status(400).json({
+            return res.status(404).json({
                 success: false,
-                message: "No posts found for user"
+                message: "No post found for user"
             })
         }
 
+        await req.redisClient.setex(cachekey, 3600, JSON.stringify(userPost))
         res.status(200).json({
+            userPost,
             success: true,
             message: "Post retrieved sucessfully"
         })
@@ -116,10 +118,38 @@ export const getPost = async (req, res) => {
     }
 }
 
-export const deletePost = async (req, res) => {
+export const deletePost = async (req, res, object) => {
     try {
-        await post.findOneAndDelete
-    } catch (error) {
+        const delPost = await post.findOneAndDelete({
+            _id: req.params.id,
+            user: req.user.userId
+        })
 
+        if (!delPost) {
+            return res.status(404).json({
+                success: false,
+                message: "Post not found for deleting"
+            })
+        }
+
+        await publishEvent("post.delete", {
+            postId: post._id,
+            userId: req.user.userId,
+            mediaIds: post.mediaIds
+        })
+
+        await invalidateCache(req, req.params.id)
+
+        res.json({
+            success: true,
+            message: "Post deleted successFully"
+        })
+        logger.info("post deleted")
+    } catch (error) {
+        logger.warn("failed creating post");
+        res.status(500).json({
+            success: false,
+            message: "Internal server error"
+        })
     }
 };

@@ -14,7 +14,7 @@ const port = process.env.PORT || 3000;
 
 app.use(express.json())
 // Initialize Redis client
-const redisClient = new Redis();
+const redisClient = new Redis(process.env.REDIS_URL);
 
 const generalRateLimit = rateLimit({
     windowMs: 15 * 60 * 1000,
@@ -79,11 +79,27 @@ app.use("/v1/posts",validateToken,proxy(process.env.POST_SERVICE_URL, {
     },
 }))
 
+app.use(
+  "/v1/media",
+  validateToken,
+  proxy(process.env.MEDIA_SERVICE_URL, {
+    ...proxyOptions,
+    proxyReqOptDecorator: (proxyReqOpts, srcReq) => {
+      proxyReqOpts.headers["x-user-id"] = srcReq.user.userId;
+
+      // 🚫 DO NOT SET content-type manually
+      return proxyReqOpts;
+    },
+    parseReqBody: false
+  })
+);
+
 app.use(errorHandler)
 app.listen(port, () => {
     console.log("API Gateway server is running on port:", port);
     logger.info(`API Gateway server is running on port: ${port}`);
     logger.info(`Auth service is running on port : ${process.env.AUTH_SERVICE_URL}`);
-    logger.info(`Post service is running on port : ${process.env.POST_SERVICE_URL}`)
+    logger.info(`Post service is running on port : ${process.env.POST_SERVICE_URL}`);
+    logger.info(`Media service is running on post : ${process.env.MEDIA_SERVICE_URL}`);
     logger.info(`Redis url"${process.env.REDIS_URL}`); 
 });
