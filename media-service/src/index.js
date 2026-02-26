@@ -6,6 +6,8 @@ import logger from "./utils/logger.js";
 import cors from "cors";
 import errorHandler from "./middlewares/errorHandler.js";
 import mediaRoutes from "./routes/media-routes.js";
+import {connectRabbitmq, consumeEvent} from './utils/rabbitMQ.js'
+import { handlePostDelete } from "../eventHandler/media-event-handler.js";
 
 dotenv.config();
 
@@ -34,6 +36,17 @@ app.use("/api/media", mediaRoutes);
 app.use(errorHandler);
 
 // Start server
-app.listen(port, () => {
-  logger.info(`Media service running on port ${port}`);
-});
+async function startServer() {
+  try {
+    await connectRabbitmq();
+
+    await consumeEvent('post.delete', handlePostDelete);
+    app.listen(port, () => {
+      logger.info(`Media service running on port ${port}`);
+    });
+  } catch (error) {
+    logger.error("error connectin to rabbitmq",error)
+  }
+}
+
+startServer();

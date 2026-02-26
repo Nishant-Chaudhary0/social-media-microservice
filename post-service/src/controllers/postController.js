@@ -38,7 +38,8 @@ export const createPost = async (req, res, next) => {
         res.status(201).json({
             success: true,
             message: "Post created successfully",
-            data: newPost
+            data: newPost,
+            mediaIds: mediaIds
         });
 
     } catch (error) {
@@ -54,13 +55,18 @@ export const getAllPosts = async (req, res) => {
         const startIndex = (page - 1) * limit;
 
         const cacheKey = `posts:${page}:${limit}`;
-        const cachedPosts = await res.redisClient(cacheKey);
+
+        // ✅ Correct GET
+        const cachedPosts = await req.redisClient.get(cacheKey);
 
         if (cachedPosts) {
             return res.json(JSON.parse(cachedPosts));
         }
 
-        const allPosts = await post.find({}).sort({ createdAt: -1 }).skip(startIndex).limit(limit);
+        const allPosts = await post.find({})
+            .sort({ createdAt: -1 })
+            .skip(startIndex)
+            .limit(limit);
 
         const totalNumberOfPosts = await post.countDocuments();
 
@@ -69,17 +75,25 @@ export const getAllPosts = async (req, res) => {
             currentPage: page,
             totalPages: Math.ceil(totalNumberOfPosts / limit),
             totalPosts: totalNumberOfPosts
-        }
+        };
 
-        await req.redisClient.setex(cacheKey, 300, result);
+        // ✅ Correct SET with expiry
+        await req.redisClient.set(
+  cacheKey,
+  JSON.stringify(result),
+  "EX",
+  300
+);
 
         res.json(result);
+
     } catch (error) {
         logger.warn("failed getting post");
         res.status(500).json({
             success: false,
-            message: "Internal server error"
-        })
+            message: "Internal server error",
+            error: error.message
+        });
     }
 };
 
@@ -118,38 +132,42 @@ export const getPost = async (req, res) => {
     }
 }
 
-export const deletePost = async (req, res, object) => {
+export const deletePost = async (req, res) => {
     try {
         const delPost = await post.findOneAndDelete({
             _id: req.params.id,
             user: req.user.userId
-        })
+        });
 
         if (!delPost) {
             return res.status(404).json({
                 success: false,
                 message: "Post not found for deleting"
-            })
+            });
         }
 
         await publishEvent("post.delete", {
-            postId: post._id,
+            postId: delPost._id,
             userId: req.user.userId,
-            mediaIds: post.mediaIds
-        })
+            mediaIds: delPost.mediaIds
+        });
 
-        await invalidateCache(req, req.params.id)
+        console.log(delPost._id)
+
+        await invalidateCache(req, req.params.id);
+
+        logger.info("Post deleted and event published");
 
         res.json({
             success: true,
-            message: "Post deleted successFully"
-        })
-        logger.info("post deleted")
+            message: "Post deleted successfully"
+        });
+
     } catch (error) {
-        logger.warn("failed creating post");
+        logger.error("Failed deleting post:", error.message);
         res.status(500).json({
             success: false,
             message: "Internal server error"
-        })
+        });
     }
 };
