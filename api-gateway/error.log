@@ -12,3 +12,4 @@
 {"level":"error","message":"Proxy error: read ECONNRESET","service":"api-gateway","timestamp":"2026-02-24T13:07:37.718Z"}
 {"level":"error","message":"Proxy error: socket hang up","service":"api-gateway","timestamp":"2026-02-24T13:10:50.091Z"}
 {"level":"error","message":"Proxy error: ","service":"api-gateway","timestamp":"2026-02-24T13:14:49.907Z"}
+{"level":"error","message":"Proxy error: ","service":"api-gateway","timestamp":"2026-02-26T13:07:42.242Z"}

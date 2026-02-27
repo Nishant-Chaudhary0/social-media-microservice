@@ -1,7 +1,7 @@
 import post from "../models/post.js";
 import logger from "../utils/logger.js";
 import { invalidateCache } from "../utils/invalidateCache.js";
-import publishEvent from "../utils/rabbitMQ.js"
+import {publishEvent} from "../utils/rabbitMQ.js"
 
 export const createPost = async (req, res, next) => {
     logger.info("Post endpoint hit");
@@ -145,6 +145,8 @@ export const deletePost = async (req, res) => {
                 message: "Post not found for deleting"
             });
         }
+
+        console.log("Deleted Post Document:", delPost);
 
         await publishEvent("post.delete", {
             postId: delPost._id,

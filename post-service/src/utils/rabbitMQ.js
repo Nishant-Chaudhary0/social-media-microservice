@@ -18,4 +18,13 @@ async function connectRabbitmq() {
     }
 }
 
-export default connectRabbitmq;
+async function publishEvent(routingKey, message){
+        if(!channel){
+            await connectRabbitmq();
+        }
+
+        channel.publish(EXCHANGE_NAME, routingKey, Buffer.from(JSON.stringify(message)))
+        logger.info(`Event published ${routingKey}`)
+}
+
+export  {connectRabbitmq, publishEvent};

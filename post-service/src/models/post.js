@@ -17,6 +17,10 @@ const Post = new mongoose.Schema({
     createdAt: {
         type: Date,
         default: Date.now
+    },
+    mediaIds: {
+        type:  mongoose.Schema.Types.ObjectId,
+        required: true
     }
 }, { timestamps: true });
 

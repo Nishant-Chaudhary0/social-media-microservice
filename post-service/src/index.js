@@ -10,7 +10,7 @@ import mongoose from "mongoose";
 import rateLimit from 'express-rate-limit';
 import { RedisStore } from 'rate-limit-redis';
 import { RateLimiterRedis } from "rate-limiter-flexible";
-import connectRabbitmq from "./utils/rabbitMQ.js";
+import { connectRabbitmq } from "./utils/rabbitMQ.js";
 
 dotenv.config();
 

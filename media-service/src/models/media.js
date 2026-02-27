@@ -20,7 +20,7 @@ const media = mongoose.Schema({
     userId: {
         type: mongoose.Schema.Types.ObjectId,
         reference: 'User'
-    }
+    },
 },{timestamps:true})
 
 const Media = mongoose.model('Media', media);
