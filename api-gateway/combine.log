@@ -774,3 +774,110 @@
 {"level":"info","message":"Post service is running on port : http://localhost:3002","service":"api-gateway","timestamp":"2026-02-27T12:10:09.091Z"}
 {"level":"info","message":"Media service is running on post : http://localhost:3003","service":"api-gateway","timestamp":"2026-02-27T12:10:09.101Z"}
 {"level":"info","message":"Redis url\"redis://localhost:6379","service":"api-gateway","timestamp":"2026-02-27T12:10:09.104Z"}
+{"level":"info","message":"API Gateway server is running on port: 3000","service":"api-gateway","timestamp":"2026-02-27T12:11:00.551Z"}
+{"level":"info","message":"Auth service is running on port : http://localhost:3001","service":"api-gateway","timestamp":"2026-02-27T12:11:00.554Z"}
+{"level":"info","message":"Post service is running on port : http://localhost:3002","service":"api-gateway","timestamp":"2026-02-27T12:11:00.555Z"}
+{"level":"info","message":"Media service is running on post : http://localhost:3003","service":"api-gateway","timestamp":"2026-02-27T12:11:00.556Z"}
+{"level":"info","message":"Redis url\"redis://localhost:6379","service":"api-gateway","timestamp":"2026-02-27T12:11:00.557Z"}
+{"level":"info","message":"received POST request /v1/auth/login","service":"api-gateway","timestamp":"2026-02-27T12:12:31.527Z"}
+{"level":"info","message":"request body {\"email\":\"kamal@example.com\",\"password\":\"hell5d26345\"}","service":"api-gateway","timestamp":"2026-02-27T12:12:31.530Z"}
+{"level":"info","message":"Response received from auth service: 200","service":"api-gateway","timestamp":"2026-02-27T12:12:33.095Z"}
+{"level":"info","message":"received POST request /v1/media/upload","service":"api-gateway","timestamp":"2026-02-27T12:13:15.288Z"}
+{"level":"info","message":"request body undefined","service":"api-gateway","timestamp":"2026-02-27T12:13:15.290Z"}
+{"level":"error","message":"Proxy error: ","service":"api-gateway","timestamp":"2026-02-27T12:13:15.307Z"}
+{"level":"info","message":"received POST request /v1/media/upload","service":"api-gateway","timestamp":"2026-02-27T12:14:14.325Z"}
+{"level":"info","message":"request body undefined","service":"api-gateway","timestamp":"2026-02-27T12:14:14.326Z"}
+{"level":"info","message":"received POST request /v1/media/upload","service":"api-gateway","timestamp":"2026-02-27T12:18:32.051Z"}
+{"level":"info","message":"request body undefined","service":"api-gateway","timestamp":"2026-02-27T12:18:32.054Z"}
+{"level":"info","message":"received POST request /v1/media/upload","service":"api-gateway","timestamp":"2026-02-27T12:19:10.708Z"}
+{"level":"info","message":"request body undefined","service":"api-gateway","timestamp":"2026-02-27T12:19:10.709Z"}
+{"level":"info","message":"received POST request /v1/posts/create-post","service":"api-gateway","timestamp":"2026-02-27T12:19:49.520Z"}
+{"level":"info","message":"request body {\"content\":\"abc\",\"mediaIds\":\"69a18bc4f52a8e3d404c3d6d\"}","service":"api-gateway","timestamp":"2026-02-27T12:19:49.523Z"}
+{"level":"warn","message":"Token not valid","service":"api-gateway","timestamp":"2026-02-27T12:19:49.528Z"}
+{"level":"info","message":"received POST request /v1/posts/create-post","service":"api-gateway","timestamp":"2026-02-27T12:20:07.380Z"}
+{"level":"info","message":"request body {\"content\":\"abc\",\"mediaIds\":\"69a18bc4f52a8e3d404c3d6d\"}","service":"api-gateway","timestamp":"2026-02-27T12:20:07.382Z"}
+{"level":"info","message":"response recieved from post service","service":"api-gateway","timestamp":"2026-02-27T12:20:08.550Z"}
+{"level":"info","message":"received DELETE request /v1/posts/69a18bf8aa05c194404ded09","service":"api-gateway","timestamp":"2026-02-27T12:22:00.268Z"}
+{"level":"info","message":"request body {\"content\":\"abc\",\"mediaIds\":\"69a045606df40b4e9f24e8e6\"}","service":"api-gateway","timestamp":"2026-02-27T12:22:00.271Z"}
+{"level":"warn","message":"Token not valid","service":"api-gateway","timestamp":"2026-02-27T12:22:00.274Z"}
+{"level":"info","message":"received DELETE request /v1/posts/69a18bf8aa05c194404ded09","service":"api-gateway","timestamp":"2026-02-27T12:22:18.008Z"}
+{"level":"info","message":"request body {\"content\":\"abc\",\"mediaIds\":\"69a045606df40b4e9f24e8e6\"}","service":"api-gateway","timestamp":"2026-02-27T12:22:18.009Z"}
+{"level":"info","message":"response recieved from post service","service":"api-gateway","timestamp":"2026-02-27T12:22:18.289Z"}
+{"level":"info","message":"received POST request /v1/media/upload","service":"api-gateway","timestamp":"2026-02-27T12:29:05.614Z"}
+{"level":"info","message":"request body undefined","service":"api-gateway","timestamp":"2026-02-27T12:29:05.617Z"}
+{"level":"info","message":"received POST request /v1/posts/create-post","service":"api-gateway","timestamp":"2026-02-27T12:29:59.322Z"}
+{"level":"info","message":"request body {\"content\":\"abc\",\"mediaIds\":\"69a18e16f52a8e3d404c3d6f\"}","service":"api-gateway","timestamp":"2026-02-27T12:29:59.323Z"}
+{"level":"error","message":"Proxy error: ","service":"api-gateway","timestamp":"2026-02-27T12:29:59.338Z"}
+{"level":"info","message":"received POST request /v1/posts/create-post","service":"api-gateway","timestamp":"2026-02-27T12:32:32.243Z"}
+{"level":"info","message":"request body {\"content\":\"abc\",\"mediaIds\":\"69a18e16f52a8e3d404c3d6f\"}","service":"api-gateway","timestamp":"2026-02-27T12:32:32.244Z"}
+{"level":"info","message":"response recieved from post service","service":"api-gateway","timestamp":"2026-02-27T12:32:33.223Z"}
+{"level":"info","message":"received DELETE request /v1/posts/69a18ee08d0e769245a8f296","service":"api-gateway","timestamp":"2026-02-27T12:32:50.921Z"}
+{"level":"info","message":"request body {\"content\":\"abc\",\"mediaIds\":\"69a045606df40b4e9f24e8e6\"}","service":"api-gateway","timestamp":"2026-02-27T12:32:50.921Z"}
+{"level":"info","message":"response recieved from post service","service":"api-gateway","timestamp":"2026-02-27T12:32:51.339Z"}
+{"level":"info","message":"received POST request /v1/media/upload","service":"api-gateway","timestamp":"2026-02-27T12:44:37.347Z"}
+{"level":"info","message":"request body undefined","service":"api-gateway","timestamp":"2026-02-27T12:44:37.354Z"}
+{"level":"info","message":"received POST request /v1/media/upload","service":"api-gateway","timestamp":"2026-02-27T12:46:02.926Z"}
+{"level":"info","message":"request body undefined","service":"api-gateway","timestamp":"2026-02-27T12:46:02.927Z"}
+{"level":"info","message":"received POST request /v1/media/upload","service":"api-gateway","timestamp":"2026-02-27T12:46:41.463Z"}
+{"level":"info","message":"request body undefined","service":"api-gateway","timestamp":"2026-02-27T12:46:41.465Z"}
+{"level":"info","message":"received POST request /v1/posts/create-post","service":"api-gateway","timestamp":"2026-02-27T12:47:05.403Z"}
+{"level":"info","message":"request body {\"content\":\"abc\",\"mediaIds\":\"69a19235f6f51b71ebb219b7\"}","service":"api-gateway","timestamp":"2026-02-27T12:47:05.404Z"}
+{"level":"info","message":"response recieved from post service","service":"api-gateway","timestamp":"2026-02-27T12:47:05.655Z"}
+{"level":"info","message":"received DELETE request /v1/posts/69a192498d0e769245a8f299","service":"api-gateway","timestamp":"2026-02-27T12:47:20.109Z"}
+{"level":"info","message":"request body {\"content\":\"abc\",\"mediaIds\":\"69a045606df40b4e9f24e8e6\"}","service":"api-gateway","timestamp":"2026-02-27T12:47:20.110Z"}
+{"level":"info","message":"response recieved from post service","service":"api-gateway","timestamp":"2026-02-27T12:47:20.615Z"}
+{"level":"info","message":"received POST request /v1/media/upload","service":"api-gateway","timestamp":"2026-02-27T12:53:37.399Z"}
+{"level":"info","message":"request body undefined","service":"api-gateway","timestamp":"2026-02-27T12:53:37.407Z"}
+{"level":"info","message":"received POST request /v1/posts/create-post","service":"api-gateway","timestamp":"2026-02-27T12:53:56.877Z"}
+{"level":"info","message":"request body {\"content\":\"abc\",\"mediaIds\":\"69a193d6ee7fcd0f5baea5b1\"}","service":"api-gateway","timestamp":"2026-02-27T12:53:56.878Z"}
+{"level":"info","message":"response recieved from post service","service":"api-gateway","timestamp":"2026-02-27T12:53:57.103Z"}
+{"level":"info","message":"received DELETE request /v1/posts/69a193e48d0e769245a8f29c","service":"api-gateway","timestamp":"2026-02-27T12:54:09.921Z"}
+{"level":"info","message":"request body {\"content\":\"abc\",\"mediaIds\":\"69a045606df40b4e9f24e8e6\"}","service":"api-gateway","timestamp":"2026-02-27T12:54:09.922Z"}
+{"level":"info","message":"response recieved from post service","service":"api-gateway","timestamp":"2026-02-27T12:54:10.326Z"}
+{"level":"info","message":"received POST request /v1/media/upload","service":"api-gateway","timestamp":"2026-02-27T12:56:51.711Z"}
+{"level":"info","message":"request body undefined","service":"api-gateway","timestamp":"2026-02-27T12:56:51.712Z"}
+{"level":"info","message":"received POST request /v1/posts/create-post","service":"api-gateway","timestamp":"2026-02-27T12:57:17.727Z"}
+{"level":"info","message":"request body {\"content\":\"abc\",\"mediaIds\":\"69a194987b0336eacc6384cc\"}","service":"api-gateway","timestamp":"2026-02-27T12:57:17.728Z"}
+{"level":"info","message":"response recieved from post service","service":"api-gateway","timestamp":"2026-02-27T12:57:18.319Z"}
+{"level":"info","message":"received DELETE request /v1/posts/69a194ad8d0e769245a8f29f","service":"api-gateway","timestamp":"2026-02-27T12:57:29.997Z"}
+{"level":"info","message":"request body {\"content\":\"abc\",\"mediaIds\":\"69a045606df40b4e9f24e8e6\"}","service":"api-gateway","timestamp":"2026-02-27T12:57:30.000Z"}
+{"level":"info","message":"response recieved from post service","service":"api-gateway","timestamp":"2026-02-27T12:57:30.184Z"}
+{"level":"info","message":"received POST request /v1/media/upload","service":"api-gateway","timestamp":"2026-02-27T13:04:18.173Z"}
+{"level":"info","message":"request body undefined","service":"api-gateway","timestamp":"2026-02-27T13:04:18.177Z"}
+{"level":"info","message":"received POST request /v1/posts/create-post","service":"api-gateway","timestamp":"2026-02-27T13:04:38.039Z"}
+{"level":"info","message":"request body {\"content\":\"abc\",\"mediaIds\":\"69a196567b0336eacc6384ce\"}","service":"api-gateway","timestamp":"2026-02-27T13:04:38.040Z"}
+{"level":"info","message":"response recieved from post service","service":"api-gateway","timestamp":"2026-02-27T13:04:38.357Z"}
+{"level":"info","message":"received DELETE request /v1/posts/69a19666b2393c2ff216b030","service":"api-gateway","timestamp":"2026-02-27T13:05:18.285Z"}
+{"level":"info","message":"request body {\"content\":\"abc\",\"mediaIds\":\"69a045606df40b4e9f24e8e6\"}","service":"api-gateway","timestamp":"2026-02-27T13:05:18.286Z"}
+{"level":"info","message":"response recieved from post service","service":"api-gateway","timestamp":"2026-02-27T13:05:18.679Z"}
+{"level":"info","message":"received POST request /v1/posts/create-post","service":"api-gateway","timestamp":"2026-02-27T13:07:25.376Z"}
+{"level":"info","message":"request body {\"content\":\"abc\",\"mediaIds\":\"69a196567b0336eacc6384ce\"}","service":"api-gateway","timestamp":"2026-02-27T13:07:25.377Z"}
+{"level":"info","message":"response recieved from post service","service":"api-gateway","timestamp":"2026-02-27T13:07:25.647Z"}
+{"level":"info","message":"received POST request /v1/media/upload","service":"api-gateway","timestamp":"2026-02-27T13:31:14.035Z"}
+{"level":"info","message":"request body undefined","service":"api-gateway","timestamp":"2026-02-27T13:31:14.046Z"}
+{"level":"warn","message":"Token not valid","service":"api-gateway","timestamp":"2026-02-27T13:31:14.060Z"}
+{"level":"info","message":"received POST request /v1/auth/login","service":"api-gateway","timestamp":"2026-02-27T13:31:25.521Z"}
+{"level":"info","message":"request body {\"email\":\"kamal@example.com\",\"password\":\"hell5d26345\"}","service":"api-gateway","timestamp":"2026-02-27T13:31:25.522Z"}
+{"level":"info","message":"Response received from auth service: 200","service":"api-gateway","timestamp":"2026-02-27T13:31:26.757Z"}
+{"level":"info","message":"received POST request /v1/media/upload","service":"api-gateway","timestamp":"2026-02-27T13:31:54.470Z"}
+{"level":"info","message":"request body undefined","service":"api-gateway","timestamp":"2026-02-27T13:31:54.471Z"}
+{"level":"info","message":"received POST request /v1/media/upload","service":"api-gateway","timestamp":"2026-02-27T13:40:43.919Z"}
+{"level":"info","message":"request body undefined","service":"api-gateway","timestamp":"2026-02-27T13:40:43.935Z"}
+{"level":"info","message":"received POST request /v1/posts/create-post","service":"api-gateway","timestamp":"2026-02-27T13:41:10.424Z"}
+{"level":"info","message":"request body {\"content\":\"abc\",\"mediaIds\":\"69a19ee377f4f98bfe2a4495\"}","service":"api-gateway","timestamp":"2026-02-27T13:41:10.427Z"}
+{"level":"warn","message":"Token not valid","service":"api-gateway","timestamp":"2026-02-27T13:41:10.434Z"}
+{"level":"info","message":"received POST request /v1/posts/create-post","service":"api-gateway","timestamp":"2026-02-27T13:41:37.370Z"}
+{"level":"info","message":"request body {\"content\":\"abc\",\"mediaIds\":\"69a19ee377f4f98bfe2a4495\"}","service":"api-gateway","timestamp":"2026-02-27T13:41:37.371Z"}
+{"level":"info","message":"response recieved from post service","service":"api-gateway","timestamp":"2026-02-27T13:41:38.086Z"}
+{"level":"info","message":"received DELETE request /v1/posts/6992add0cfc663fd1288d558","service":"api-gateway","timestamp":"2026-02-27T13:41:56.093Z"}
+{"level":"info","message":"request body {\"content\":\"abc\",\"mediaIds\":\"69a045606df40b4e9f24e8e6\"}","service":"api-gateway","timestamp":"2026-02-27T13:41:56.094Z"}
+{"level":"warn","message":"Token not valid","service":"api-gateway","timestamp":"2026-02-27T13:41:56.098Z"}
+{"level":"info","message":"received DELETE request /v1/posts/6992add0cfc663fd1288d558","service":"api-gateway","timestamp":"2026-02-27T13:42:29.155Z"}
+{"level":"info","message":"request body {\"content\":\"abc\",\"mediaIds\":\"69a045606df40b4e9f24e8e6\"}","service":"api-gateway","timestamp":"2026-02-27T13:42:29.157Z"}
+{"level":"info","message":"response recieved from post service","service":"api-gateway","timestamp":"2026-02-27T13:42:29.357Z"}
+{"level":"info","message":"received POST request /v1/posts/create-post","service":"api-gateway","timestamp":"2026-02-27T13:42:41.570Z"}
+{"level":"info","message":"request body {\"content\":\"abc\",\"mediaIds\":\"69a19ee377f4f98bfe2a4495\"}","service":"api-gateway","timestamp":"2026-02-27T13:42:41.572Z"}
+{"level":"info","message":"response recieved from post service","service":"api-gateway","timestamp":"2026-02-27T13:42:41.844Z"}
+{"level":"info","message":"received DELETE request /v1/posts/69a19f51938c2df1b9679534","service":"api-gateway","timestamp":"2026-02-27T13:42:53.730Z"}
+{"level":"info","message":"request body {\"content\":\"abc\",\"mediaIds\":\"69a045606df40b4e9f24e8e6\"}","service":"api-gateway","timestamp":"2026-02-27T13:42:53.732Z"}
+{"level":"info","message":"response recieved from post service","service":"api-gateway","timestamp":"2026-02-27T13:42:54.068Z"}

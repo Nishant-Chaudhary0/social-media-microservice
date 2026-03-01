@@ -87,12 +87,24 @@ app.use(
     proxyReqOptDecorator: (proxyReqOpts, srcReq) => {
       proxyReqOpts.headers["x-user-id"] = srcReq.user.userId;
 
-      // 🚫 DO NOT SET content-type manually
       return proxyReqOpts;
     },
     parseReqBody: false
   })
 );
+
+app.use("/v1/media", validateToken, proxy(process.env.SEARCH_SERVICE_URL, {
+    ...proxyOptions,
+    proxyReqOptDecorator:(proxyReqOpts, srcReq) => {
+        proxyReqOpts.headers["content-type"] = "application/json";
+        proxyReqOpts.headers['x-user-id'] = srcReq.user.userId;
+        return proxyReqOpts;
+    },
+    userResDecorator: (proxyRes, proxyResData, userReq, userRes) => {
+        logger.info('response recieved from search service',proxyRes.statusCode);
+        return proxyResData;
+    }
+}))
 
 app.use(errorHandler)
 app.listen(port, () => {
@@ -101,5 +113,6 @@ app.listen(port, () => {
     logger.info(`Auth service is running on port : ${process.env.AUTH_SERVICE_URL}`);
     logger.info(`Post service is running on port : ${process.env.POST_SERVICE_URL}`);
     logger.info(`Media service is running on post : ${process.env.MEDIA_SERVICE_URL}`);
+    logger.info(`Search service is running on post : ${process.env.SEARCH_SERVICE_URL}`);
     logger.info(`Redis url"${process.env.REDIS_URL}`); 
 });
