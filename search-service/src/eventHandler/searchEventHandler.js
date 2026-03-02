@@ -18,3 +18,12 @@ export const addToSearch = async(event) => {
         logger.error("error while saving search event", error);
     }
 }
+
+export const deleteFromSearch = async(event) => {
+    try {
+        await Search.findByIdAndDelete({postId : event.postId});
+        logger.info("Deleted post from search successfully");
+    } catch (error) {
+        logger.error("error while deleting search event", error);
+    }
+}
